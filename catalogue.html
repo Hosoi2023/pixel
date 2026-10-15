@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catalogue – PIXEL</title>
+  <meta name="description" content="Tous les films critiqués, à filtrer par année, acteur, réalisateur, genre et classification.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/catalogue.css">
+</head>
+<body>
+
+  <!-- ===== Site header (shared across pages) ===== -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__logo" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="brand__name">PIXEL</span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle visually-hidden">
+      <label for="nav-toggle" class="nav-toggle__button" aria-label="Ouvrir le menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </label>
+
+      <nav class="main-nav" aria-label="Navigation principale">
+        <ul class="main-nav__list">
+          <li><a class="main-nav__link" href="index.html">Accueil</a></li>
+          <li><a class="main-nav__link" href="catalogue.html" aria-current="page">Catalogue</a></li>
+          <li><a class="main-nav__link" href="genres.html">Genres</a></li>
+          <li><a class="main-nav__link" href="about.html">Qui sommes-nous</a></li>
+        </ul>
+        <a class="button button--outline" href="login.html">Connexion</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Catalogue ===== -->
+  <main class="container catalogue">
+    <header class="page-header">
+      <h1 class="page-title">Catalogue</h1>
+      <p class="page-intro">Tous les films critiqués, à filtrer selon vos envies.</p>
+    </header>
+
+    <div class="catalogue__layout">
+      <!-- Controls the filter panel on mobile (CSS only) -->
+      <input type="checkbox" id="filters-toggle" class="filters-toggle visually-hidden">
+
+      <!-- Filters -->
+      <aside class="filters" aria-labelledby="filters-title">
+        <form class="filters__form" id="filters-form" action="catalogue.html" method="get">
+          <div class="filters__header">
+            <h2 id="filters-title" class="filters__title">Filtres</h2>
+            <button type="reset" class="link-button">Réinitialiser</button>
+            <label for="filters-toggle" class="filters__close" aria-label="Fermer les filtres">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </label>
+          </div>
+
+          <fieldset class="filter-group">
+            <legend class="field-label">Année</legend>
+            <div class="year-range">
+              <div class="year-range__values">
+                <output for="year-min">1920</output>
+                <output for="year-max">2026</output>
+              </div>
+              <label for="year-min" class="visually-hidden">Année minimum</label>
+              <input type="range" id="year-min" name="year_min" min="1920" max="2026" value="1920" class="range">
+              <label for="year-max" class="visually-hidden">Année maximum</label>
+              <input type="range" id="year-max" name="year_max" min="1920" max="2026" value="2026" class="range">
+            </div>
+          </fieldset>
+
+          <div class="filter-group">
+            <label class="field-label" for="actor">Acteur</label>
+            <input class="input" type="text" id="actor" name="actor" placeholder="Ex. Keanu Reeves">
+          </div>
+
+          <div class="filter-group">
+            <label class="field-label" for="director">Réalisateur</label>
+            <input class="input" type="text" id="director" name="director" placeholder="Ex. Agnès Varda">
+          </div>
+
+          <div class="filter-group">
+            <label class="field-label" for="genre">Genre</label>
+            <select class="select" id="genre" name="genre">
+              <option value="">Tous les genres</option>
+              <option value="action">Action</option>
+              <option value="animation">Animation</option>
+              <option value="comedy">Comédie</option>
+              <option value="documentary">Documentaire</option>
+              <option value="drama">Drame</option>
+              <option value="horror">Horreur</option>
+              <option value="science-fiction" selected>Science-fiction</option>
+              <option value="thriller">Thriller</option>
+              <option value="western">Western</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="field-label" for="subgenre">Sous-genre</label>
+            <select class="select" id="subgenre" name="subgenre">
+              <option value="">Tous</option>
+              <option value="cyberpunk">Cyberpunk</option>
+              <option value="space-opera">Space opera</option>
+              <option value="dystopia">Dystopie</option>
+            </select>
+          </div>
+
+          <fieldset class="filter-group age-filter">
+            <legend class="visually-hidden">Classification par âge</legend>
+            <label class="checkbox">
+              <input type="checkbox" class="checkbox__input age-filter__toggle" name="age_filter" checked>
+              <span>Classification par âge</span>
+            </label>
+            <div class="age-filter__range">
+              <div class="age-filter__field">
+                <label class="field-label" for="pegi-min">De</label>
+                <select class="select" id="pegi-min" name="pegi_min">
+                  <option value="3" selected>PEGI 3</option>
+                  <option value="7">PEGI 7</option>
+                  <option value="12">PEGI 12</option>
+                  <option value="16">PEGI 16</option>
+                  <option value="18">PEGI 18</option>
+                </select>
+              </div>
+              <div class="age-filter__field">
+                <label class="field-label" for="pegi-max">À</label>
+                <select class="select" id="pegi-max" name="pegi_max">
+                  <option value="3">PEGI 3</option>
+                  <option value="7">PEGI 7</option>
+                  <option value="12">PEGI 12</option>
+                  <option value="16" selected>PEGI 16</option>
+                  <option value="18">PEGI 18</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="button button--primary button--block">Appliquer les filtres</button>
+        </form>
+      </aside>
+
+      <!-- Results -->
+      <section class="results" aria-labelledby="results-title">
+        <h2 id="results-title" class="visually-hidden">Résultats</h2>
+
+        <div class="results__toolbar">
+          <form class="search" action="catalogue.html" method="get" role="search">
+            <label for="search-input" class="visually-hidden">Rechercher un titre</label>
+            <input class="search__input" type="search" id="search-input" name="q" placeholder="Rechercher un titre…">
+            <button class="search__button" type="submit" aria-label="Lancer la recherche">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M15 15l6 6"/></svg>
+            </button>
+          </form>
+
+          <label for="filters-toggle" class="button button--outline filters-toggle__button">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+            Filtres (2)
+          </label>
+
+          <div class="results__sort">
+            <p class="results__count">[N] films</p>
+            <label for="sort" class="results__sort-label">Trier par</label>
+            <select class="select select--surface" id="sort" name="sort" form="filters-form">
+              <option value="rating">Mieux notés</option>
+              <option value="recent">Plus récents</option>
+              <option value="release">Date de sortie</option>
+              <option value="title">A → Z</option>
+            </select>
+          </div>
+        </div>
+
+        <ul class="active-filters" aria-label="Filtres actifs">
+          <li><button type="button" class="chip chip--active" aria-label="Retirer le filtre Science-fiction">Science-fiction <span aria-hidden="true">×</span></button></li>
+          <li><button type="button" class="chip chip--active" aria-label="Retirer le filtre PEGI 3 à 16">PEGI 3 – 16 <span aria-hidden="true">×</span></button></li>
+        </ul>
+
+        <ul class="film-grid">
+          <li>
+            <article class="film-card">
+              <a class="film-card__link" href="film.html">
+                <img class="film-card__poster" src="assets/posters/matrix.jpg" alt="" width="400" height="600" loading="lazy">
+                <h3 class="film-card__title">Matrix</h3>
+                <dl class="film-card__meta">
+                  <div><dt>Date</dt><dd>1999</dd></div>
+                  <div><dt>Genre</dt><dd>SF</dd></div>
+                  <div><dt>Âge</dt><dd>PEGI 16</dd></div>
+                </dl>
+                <div class="film-card__rating">
+                  <span class="rating" style="--score: 9" role="img" aria-label="Notre note : 9 sur 10"></span>
+                  <span class="rating__score" aria-hidden="true">9/10</span>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article class="film-card">
+              <a class="film-card__link" href="film.html">
+                <img class="film-card__poster" src="assets/posters/blade-runner.jpg" alt="" width="400" height="600" loading="lazy">
+                <h3 class="film-card__title">Blade Runner</h3>
+                <dl class="film-card__meta">
+                  <div><dt>Date</dt><dd>1982</dd></div>
+                  <div><dt>Genre</dt><dd>SF</dd></div>
+                  <div><dt>Âge</dt><dd>PEGI 16</dd></div>
+                </dl>
+                <div class="film-card__rating">
+                  <span class="rating" style="--score: 9" role="img" aria-label="Notre note : 9 sur 10"></span>
+                  <span class="rating__score" aria-hidden="true">9/10</span>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article class="film-card">
+              <a class="film-card__link" href="film.html">
+                <img class="film-card__poster" src="assets/posters/dune-part-two.jpg" alt="" width="400" height="600" loading="lazy">
+                <h3 class="film-card__title">Dune : Deuxième partie</h3>
+                <dl class="film-card__meta">
+                  <div><dt>Date</dt><dd>2024</dd></div>
+                  <div><dt>Genre</dt><dd>SF</dd></div>
+                  <div><dt>Âge</dt><dd>PEGI 12</dd></div>
+                </dl>
+                <div class="film-card__rating">
+                  <span class="rating" style="--score: 8" role="img" aria-label="Notre note : 8 sur 10"></span>
+                  <span class="rating__score" aria-hidden="true">8/10</span>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article class="film-card">
+              <a class="film-card__link" href="film.html">
+                <img class="film-card__poster" src="assets/posters/alien.jpg" alt="" width="400" height="600" loading="lazy">
+                <h3 class="film-card__title">Alien</h3>
+                <dl class="film-card__meta">
+                  <div><dt>Date</dt><dd>1979</dd></div>
+                  <div><dt>Genre</dt><dd>SF</dd></div>
+                  <div><dt>Âge</dt><dd>PEGI 16</dd></div>
+                </dl>
+                <div class="film-card__rating">
+                  <span class="rating" style="--score: 9" role="img" aria-label="Notre note : 9 sur 10"></span>
+                  <span class="rating__score" aria-hidden="true">9/10</span>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article class="film-card">
+              <a class="film-card__link" href="film.html">
+                <img class="film-card__poster" src="assets/posters/2001-space-odyssey.jpg" alt="" width="400" height="600" loading="lazy">
+                <h3 class="film-card__title">2001 : l’Odyssée de l’espace</h3>
+                <dl class="film-card__meta">
+                  <div><dt>Date</dt><dd>1968</dd></div>
+                  <div><dt>Genre</dt><dd>SF</dd></div>
+                  <div><dt>Âge</dt><dd>PEGI 7</dd></div>
+                </dl>
+                <div class="film-card__rating">
+                  <span class="rating" style="--score: 10" role="img" aria-label="Notre note : 10 sur 10"></span>
+                  <span class="rating__score" aria-hidden="true">10/10</span>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article class="film-card">
+              <a class="film-card__link" href="film.html">
+                <img class="film-card__poster" src="assets/posters/her.jpg" alt="" width="400" height="600" loading="lazy">
+                <h3 class="film-card__title">Her</h3>
+                <dl class="film-card__meta">
+                  <div><dt>Date</dt><dd>2013</dd></div>
+                  <div><dt>Genre</dt><dd>SF</dd></div>
+                  <div><dt>Âge</dt><dd>PEGI 12</dd></div>
+                </dl>
+                <div class="film-card__rating">
+                  <span class="rating" style="--score: 8" role="img" aria-label="Notre note : 8 sur 10"></span>
+                  <span class="rating__score" aria-hidden="true">8/10</span>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article class="film-card">
+              <a class="film-card__link" href="film.html">
+                <img class="film-card__poster" src="assets/posters/ex-machina.jpg" alt="" width="400" height="600" loading="lazy">
+                <h3 class="film-card__title">Ex Machina</h3>
+                <dl class="film-card__meta">
+                  <div><dt>Date</dt><dd>2014</dd></div>
+                  <div><dt>Genre</dt><dd>SF</dd></div>
+                  <div><dt>Âge</dt><dd>PEGI 12</dd></div>
+                </dl>
+                <div class="film-card__rating">
+                  <span class="rating" style="--score: 8" role="img" aria-label="Notre note : 8 sur 10"></span>
+                  <span class="rating__score" aria-hidden="true">8/10</span>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article class="film-card">
+              <a class="film-card__link" href="film.html">
+                <img class="film-card__poster" src="assets/posters/arrival.jpg" alt="" width="400" height="600" loading="lazy">
+                <h3 class="film-card__title">Premier Contact</h3>
+                <dl class="film-card__meta">
+                  <div><dt>Date</dt><dd>2016</dd></div>
+                  <div><dt>Genre</dt><dd>SF</dd></div>
+                  <div><dt>Âge</dt><dd>PEGI 12</dd></div>
+                </dl>
+                <div class="film-card__rating">
+                  <span class="rating" style="--score: 8" role="img" aria-label="Notre note : 8 sur 10"></span>
+                  <span class="rating__score" aria-hidden="true">8/10</span>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article class="film-card">
+              <a class="film-card__link" href="film.html">
+                <img class="film-card__poster" src="assets/posters/gattaca.jpg" alt="" width="400" height="600" loading="lazy">
+                <h3 class="film-card__title">Gattaca</h3>
+                <dl class="film-card__meta">
+                  <div><dt>Date</dt><dd>1997</dd></div>
+                  <div><dt>Genre</dt><dd>SF</dd></div>
+                  <div><dt>Âge</dt><dd>PEGI 12</dd></div>
+                </dl>
+                <div class="film-card__rating">
+                  <span class="rating" style="--score: 7" role="img" aria-label="Notre note : 7 sur 10"></span>
+                  <span class="rating__score" aria-hidden="true">7/10</span>
+                </div>
+              </a>
+            </article>
+          </li>
+        </ul>
+
+        <nav class="pagination" aria-label="Pagination">
+          <ul class="pagination__list">
+            <li><a class="pagination__link" href="catalogue.html?page=1" aria-current="page">1</a></li>
+            <li><a class="pagination__link" href="catalogue.html?page=2">2</a></li>
+            <li><a class="pagination__link" href="catalogue.html?page=3">3</a></li>
+            <li><a class="pagination__link pagination__link--next" href="catalogue.html?page=2">Suivant</a></li>
+          </ul>
+        </nav>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== Site footer (shared across pages) ===== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="site-footer__copyright">
+        <span class="brand__logo brand__logo--small" aria-hidden="true"><span></span><span></span><span></span></span>
+        © 2026 PIXEL
+      </p>
+      <nav aria-label="Liens de bas de page">
+        <ul class="site-footer__links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="legal.html">Mentions légales</a></li>
+          <li><a href="privacy.html">Confidentialité</a></li>
+          <li><a href="cookies.html">Cookies</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
