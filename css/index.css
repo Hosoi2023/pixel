@@ -1,0 +1,1249 @@
+/* ---------- Conteneur principal ---------- */
+
+.home {
+    flex: 1;
+    overflow: clip;
+}
+
+.home .container {
+    width: 100%;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.section-heading > div {
+    min-width: 0;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.section-title__marker {
+    display: inline-block;
+    width: 8px;
+    min-width: 8px;
+    height: 24px;
+    background: var(--color-accent);
+}
+
+.section-subtitle {
+    margin-top: 8px;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.section-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    color: var(--color-text-soft);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    transition: color 0.2s;
+}
+
+.section-link span {
+    color: var(--color-accent);
+}
+
+.section-link:hover {
+    color: var(--color-accent);
+}
+
+/* ---------- Film à la une ---------- */
+
+.featured {
+    padding-top: 48px;
+    padding-bottom: 40px;
+}
+
+.featured__eyebrow {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+
+.featured__card {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 40px;
+    padding: 28px;
+    padding-bottom: 82px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+}
+
+.featured__poster {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    background: var(--color-surface-dark);
+}
+
+.featured__poster img {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    max-height: 480px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.featured__badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 8px 10px;
+    color: var(--color-on-accent);
+    background: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    line-height: 1.5;
+}
+
+.featured__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 0;
+    padding: 12px 0;
+}
+
+.featured__meta {
+    margin-bottom: 18px;
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+}
+
+.featured__meta span {
+    padding-inline: 5px;
+    color: var(--color-text-muted);
+}
+
+.featured__title {
+    margin-bottom: 18px;
+    color: var(--color-text-strong);
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.featured__description {
+    max-width: 560px;
+    margin-bottom: 28px;
+    color: var(--color-text-body);
+    font-size: 0.95rem;
+    line-height: 1.9;
+}
+
+.featured__ratings {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    width: 100%;
+    margin-bottom: 30px;
+    padding-top: 22px;
+    border-top: 1px solid var(--color-border);
+}
+
+.featured__rating {
+    min-width: 0;
+}
+
+.rating-label {
+    margin-bottom: 12px;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.rating-line {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.rating-line .rating {
+    max-width: 100%;
+}
+
+.featured__button {
+    gap: 16px;
+    min-height: 48px;
+}
+
+.featured__button span {
+    font-size: 1.1rem;
+}
+
+.featured__controls {
+    position: absolute;
+    right: 28px;
+    bottom: 22px;
+    display: flex;
+    gap: 10px;
+}
+
+.featured__arrow {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    color: var(--color-accent);
+    background: transparent;
+    border: 1px solid var(--color-border-strong);
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.featured__arrow:hover {
+    color: var(--color-on-accent);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* ---------- Les mieux notés ---------- */
+
+.top-films {
+    padding-top: 54px;
+    padding-bottom: 88px;
+}
+
+.film-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.film-card {
+    min-width: 0;
+}
+
+.film-card__poster-link {
+    display: block;
+    margin-bottom: 16px;
+    overflow: hidden;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+}
+
+.film-card__poster {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.film-card:hover .film-card__poster-link {
+    border-color: var(--color-accent);
+}
+
+.film-card:hover .film-card__poster {
+    transform: scale(1.035);
+}
+
+.film-card__content {
+    min-width: 0;
+}
+
+.film-card__meta {
+    margin-bottom: 8px;
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    line-height: 1.8;
+}
+
+.film-card__meta span {
+    padding-inline: 3px;
+    color: var(--color-accent);
+}
+
+.film-card__title {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.film-card__title a {
+    color: var(--color-text-strong);
+    transition: color 0.2s;
+}
+
+.film-card__title a:hover {
+    color: var(--color-accent);
+}
+
+.film-card__rating {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* ---------- Dernières critiques ---------- */
+
+.latest-reviews {
+    padding-block: 72px;
+    background: var(--color-surface-dark);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.review-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.review-card {
+    display: grid;
+    grid-template-columns: 104px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 24px;
+    padding: 20px;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    transition: border-color 0.2s;
+}
+
+.review-card:hover {
+    border-color: var(--color-border-strong);
+}
+
+.review-card__poster-link {
+    display: block;
+    overflow: hidden;
+    background: var(--color-surface);
+}
+
+.review-card__poster {
+    width: 104px;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.review-card__poster-link:hover .review-card__poster {
+    transform: scale(1.04);
+}
+
+.review-card__content {
+    min-width: 0;
+}
+
+.review-card__genre {
+    margin-bottom: 8px;
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+}
+
+.review-card__title {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.review-card__title a {
+    color: var(--color-text-strong);
+}
+
+.review-card__title a:hover {
+    color: var(--color-accent);
+}
+
+.review-card__excerpt {
+    margin-bottom: 14px;
+    color: var(--color-text-body);
+    font-size: 0.88rem;
+    line-height: 1.8;
+}
+
+.review-card__byline {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    line-height: 1.8;
+}
+
+.review-card__byline span:first-child {
+    color: var(--color-text-soft);
+}
+
+.review-card__score {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    min-width: 76px;
+}
+
+.review-card__score-number {
+    color: var(--color-accent);
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    white-space: nowrap;
+}
+
+.review-card__score-number span {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+}
+
+.review-card__score-label {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.5px;
+    text-align: right;
+}
+
+/* ---------- Explorer par genre ---------- */
+
+.genres {
+    padding-top: 82px;
+    padding-bottom: 88px;
+}
+
+.genre-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.genre-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    min-height: 46px;
+    padding: 11px 16px;
+    color: var(--color-text-soft);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-strong);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.genre-chip span {
+    color: var(--color-accent);
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.genre-chip:hover {
+    color: var(--color-on-accent);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.genre-chip:hover span {
+    color: var(--color-on-accent);
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ---------- Newsletter ---------- */
+
+.newsletter {
+    padding-block: 54px;
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+}
+
+.newsletter__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+.newsletter__content {
+    flex: 1 1 400px;
+    min-width: 0;
+}
+
+.newsletter__eyebrow {
+    margin-bottom: 12px;
+    color: var(--color-accent);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+}
+
+.newsletter__title {
+    margin-bottom: 12px;
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2vw, 1.35rem);
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.newsletter__description {
+    max-width: 480px;
+    color: var(--color-text-body);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.newsletter__form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    flex: 1 1 420px;
+    min-width: 0;
+    gap: 0;
+}
+
+.newsletter__input {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+    padding: 12px 14px;
+    color: var(--color-text);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border-strong);
+    border-right: 0;
+    border-radius: 0;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+}
+
+.newsletter__button {
+    min-height: 48px;
+    white-space: nowrap;
+}
+
+.newsletter__button span {
+    margin-left: 8px;
+}
+
+.newsletter__note {
+    grid-column: 1 / -1;
+    margin-top: 12px;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+}
+
+/* ===== Fenêtre modale PIXEL ===== */
+
+.login-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(3px);
+}
+
+.login-modal.is-open {
+    display: flex;
+}
+
+.login-window {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    width: min(1028px, 100%);
+    min-height: 642px;
+    max-height: calc(100vh - 48px);
+
+    overflow: auto;
+    color: #e7eee9;
+    background: #050805;
+    border: 1px solid #111a12;
+}
+
+/* ===== Colonne gauche ===== */
+
+.login-visual {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-width: 0;
+    padding: 34px;
+    border-right: 1px solid #172019;
+}
+
+.login-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    align-self: flex-start;
+
+    color: #e7eee9;
+    text-decoration: none;
+    font-family: "Silkscreen", monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.login-brand__logo {
+    display: grid;
+    grid-template-columns: repeat(2, 10px);
+    grid-template-rows: repeat(2, 10px);
+    gap: 2px;
+}
+
+.login-brand__logo span:nth-child(1) {
+    background: #ff393f;
+}
+
+.login-brand__logo span:nth-child(2) {
+    background: #00f34b;
+}
+
+.login-brand__logo span:nth-child(3) {
+    background: #3267ff;
+}
+
+.login-brand__logo span:nth-child(4) {
+    background: #050805;
+}
+
+.pixel-art {
+    display: grid;
+    grid-template-columns: repeat(20, minmax(0, 1fr));
+    gap: 2px;
+
+    width: 100%;
+    max-width: 370px;
+    align-self: center;
+    margin: 35px 0;
+}
+
+.pixel-art span {
+    aspect-ratio: 1;
+    background: #081009;
+}
+
+.pixel-art span.pixel-green {
+    background: #00d93e;
+}
+
+.pixel-art span.pixel-dark-green {
+    background: #006c20;
+}
+
+.pixel-art span.pixel-blue {
+    background: #3267ff;
+}
+
+.pixel-art span.pixel-red {
+    background: #ff393f;
+}
+
+.pixel-art span.pixel-bright {
+    background: #00f34b;
+}
+
+.login-tagline {
+    margin: 0;
+
+    color: #e7eee9;
+    font-family: "Silkscreen", monospace;
+    font-size: clamp(12px, 1.4vw, 15px);
+    line-height: 1.7;
+    letter-spacing: 1px;
+}
+
+/* ===== Colonne droite ===== */
+
+.login-panel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+    padding: 50px;
+}
+
+.login-panel__inner {
+    width: 100%;
+    max-width: 285px;
+}
+
+.login-panel__inner h2 {
+    margin: 0 0 8px;
+
+    color: #e7eee9;
+    font-family: "Silkscreen", monospace;
+    font-size: 21px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.login-subtitle {
+    margin: 0 0 27px;
+
+    color: #a6afa8;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* ===== Champs du formulaire ===== */
+
+.login-form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    margin-bottom: 22px;
+}
+
+.login-form__group label,
+.login-password__heading label {
+    color: #a6afa8;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.login-form__group input {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 37px;
+    padding: 10px;
+
+    color: #e7eee9;
+    background: #090d09;
+    border: 1px solid #26382a;
+    border-radius: 0;
+
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+}
+
+.login-form__group input::placeholder {
+    color: #718475;
+}
+
+.login-form__group input:focus-visible {
+    outline: 1px solid #00f34b;
+    outline-offset: 2px;
+}
+
+.login-password__heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.login-password__heading a,
+.login-register a {
+    color: #00f34b;
+    text-decoration: none;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 10px;
+}
+
+.login-password__heading a:hover,
+.login-register a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Rester connecté ===== */
+
+.login-remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin: 0 0 26px;
+
+    color: #a6afa8;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.login-remember input {
+    width: 13px;
+    height: 13px;
+    margin: 0;
+
+    accent-color: #00f34b;
+}
+
+/* ===== Bouton principal ===== */
+
+.login-submit {
+    width: 100%;
+    min-height: 37px;
+    padding: 12px;
+
+    color: #050805;
+    background: #00f34b;
+    border: 1px solid #00f34b;
+    border-radius: 0;
+
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.login-submit:hover {
+    color: #00f34b;
+    background: #050805;
+}
+
+.login-submit:focus-visible {
+    outline: 2px solid #e7eee9;
+    outline-offset: 3px;
+}
+
+/* ===== Séparateur et inscription ===== */
+
+.login-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 24px 0;
+}
+
+.login-divider span {
+    flex: 1;
+    height: 1px;
+    background: #172019;
+}
+
+.login-divider p {
+    margin: 0;
+    color: #718475;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 9px;
+}
+
+.login-register {
+    margin: 0;
+    color: #a6afa8;
+    text-align: center;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 11px;
+}
+
+/* ===== Bouton de fermeture ===== */
+
+.login-modal__close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    z-index: 2;
+
+    padding: 4px 8px;
+    color: #a6afa8;
+    background: transparent;
+    border: 0;
+
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.login-modal__close:hover {
+    color: #00f34b;
+}
+
+.login-modal__close:focus-visible {
+    outline: 1px solid #00f34b;
+}
+
+/* ===== Adaptation aux petits écrans ===== */
+
+@media (max-width: 700px) {
+    .login-modal {
+        padding: 12px;
+    }
+
+    .login-window {
+        grid-template-columns: 1fr;
+        width: min(430px, 100%);
+        min-height: 0;
+        max-height: calc(100dvh - 24px);
+    }
+
+    .login-visual {
+        gap: 22px;
+        padding: 24px;
+        border-right: 0;
+        border-bottom: 1px solid #172019;
+    }
+
+    .pixel-art {
+        width: min(100%, 270px);
+        margin: 0;
+    }
+
+    .login-tagline {
+        font-size: 11px;
+    }
+
+    .login-panel {
+        padding: 35px 24px;
+    }
+
+    .login-panel__inner {
+        max-width: 360px;
+    }
+
+    .login-panel__inner h2 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 380px) {
+    .login-visual {
+        padding: 18px;
+    }
+
+    .login-panel {
+        padding: 30px 18px;
+    }
+
+    .login-brand {
+        font-size: 10px;
+    }
+}
+
+
+/* ---------- Tablettes ---------- */
+
+@media (max-width: 1000px) {
+    .featured__card {
+        gap: 26px;
+        padding: 22px;
+        padding-bottom: 78px;
+    }
+
+    .film-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 28px 20px;
+    }
+
+    .film-card__poster-link {
+        margin-bottom: 12px;
+    }
+
+    .newsletter__inner {
+        gap: 28px;
+    }
+}
+
+/* ---------- Mobiles ---------- */
+
+@media (max-width: 700px) {
+    .section-heading {
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .section-title {
+        font-size: 0.95rem;
+    }
+
+    .section-title__marker {
+        height: 20px;
+    }
+
+    .section-link {
+        padding-top: 4px;
+        font-size: 0.68rem;
+        text-align: right;
+    }
+
+    .featured {
+        padding-top: 32px;
+        padding-bottom: 28px;
+    }
+
+    .featured__eyebrow {
+        display: none;
+    }
+
+    .featured__card {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        padding: 16px;
+        padding-bottom: 76px;
+    }
+
+    .featured__poster img {
+        min-height: 0;
+        max-height: 360px;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+    }
+
+    .featured__badge {
+        top: 10px;
+        left: 10px;
+        font-size: 0.58rem;
+    }
+
+    .featured__content {
+        padding: 0;
+    }
+
+    .featured__meta {
+        margin-bottom: 12px;
+        font-size: 0.65rem;
+    }
+
+    .featured__title {
+        margin-bottom: 12px;
+        font-size: 1.35rem;
+    }
+
+    .featured__description {
+        margin-bottom: 22px;
+        font-size: 0.88rem;
+    }
+
+    .featured__ratings {
+        gap: 12px;
+        margin-bottom: 24px;
+        padding-top: 18px;
+    }
+
+    .rating-label {
+        font-size: 0.61rem;
+    }
+
+    .rating-line {
+        gap: 8px;
+    }
+
+    .rating--large {
+        --pixel: 11px;
+        --gap: 2px;
+    }
+
+    .featured__button {
+        width: 100%;
+    }
+
+    .featured__controls {
+        right: 16px;
+        bottom: 16px;
+    }
+
+    .top-films {
+        padding-top: 40px;
+        padding-bottom: 56px;
+    }
+
+    .film-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 16px;
+    }
+
+    .film-card__meta {
+        font-size: 0.62rem;
+    }
+
+    .film-card__title {
+        font-size: 0.9rem;
+    }
+
+    .latest-reviews {
+        padding-block: 48px;
+    }
+
+    .review-list {
+        gap: 12px;
+    }
+
+    .review-card {
+        grid-template-columns: 76px minmax(0, 1fr);
+        align-items: start;
+        gap: 14px;
+        padding: 14px;
+    }
+
+    .review-card__poster {
+        width: 76px;
+    }
+
+    .review-card__genre {
+        margin-bottom: 6px;
+        font-size: 0.62rem;
+    }
+
+    .review-card__title {
+        margin-bottom: 8px;
+        font-size: 0.95rem;
+    }
+
+    .review-card__excerpt {
+        margin-bottom: 10px;
+        font-size: 0.82rem;
+        line-height: 1.7;
+    }
+
+    .review-card__byline {
+        font-size: 0.62rem;
+    }
+
+    .review-card__score {
+        grid-column: 2;
+        flex-direction: row;
+        align-items: center;
+        justify-self: start;
+        gap: 10px;
+        min-width: 0;
+    }
+
+    .review-card__score-number {
+        font-size: 1rem;
+    }
+
+    .review-card__score-label {
+        font-size: 0.58rem;
+        text-align: left;
+    }
+
+    .genres {
+        padding-top: 52px;
+        padding-bottom: 56px;
+    }
+
+    .genre-list {
+        gap: 8px;
+    }
+
+    .genre-chip {
+        min-height: 42px;
+        padding: 9px 12px;
+        font-size: 0.7rem;
+    }
+
+    .genre-chip span {
+        opacity: 1;
+        transform: none;
+    }
+
+    .newsletter {
+        padding-block: 40px;
+    }
+
+    .newsletter__inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+    }
+
+    .newsletter__content,
+    .newsletter__form {
+        flex-basis: auto;
+        width: 100%;
+    }
+}
+
+/* ---------- Petits écrans ---------- */
+
+@media (max-width: 380px) {
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-link {
+        text-align: left;
+    }
+
+    .featured__ratings {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .film-grid {
+        gap: 24px 12px;
+    }
+
+    .review-card {
+        grid-template-columns: 64px minmax(0, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .review-card__poster {
+        width: 64px;
+    }
+
+    .newsletter__form {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .newsletter__input {
+        border-right: 1px solid var(--color-border-strong);
+    }
+
+    .newsletter__button {
+        width: 100%;
+    }
+
+    .newsletter__note {
+        margin-top: 0;
+    }
+}
+
+/* ---------- Accessibilité ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .home *,
+    .home *::before,
+    .home *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
