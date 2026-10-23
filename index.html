@@ -1,208 +1,381 @@
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pixel</title>
-    </head>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PIXEL : découvrez les meilleurs films, explorez les genres et lisez des critiques de cinéma.">
+    <meta name="theme-color" content="#050805">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>PIXEL — Critiques et découvertes cinéma</title>
+</head>
     <body>
-        <!-- header present sur tout le site -->
-        <header>
-            <section>
-                <div>
-                    <img src="" alt="logo site"> 
-                    <h2>Pixel</h2>
-                </div>
-                <div>
-                    <a href="index.html">accueil</a>
-                    <a href="catalogue.html">Catalogue</a>
-                    <a href="genres.html">genres</a>
-                    <a href="quiSommesNous.html">qui soummes-nous</a>
-                </div>
-                <div>
-                    <form>
-                        <input type="search" name="q" placeholder="Search an item...">
 
-                        <button class="search-btn" type="submit">
-                            <span class="icon"></span>
-                            <span class="sr-only">Rechercher</span>
-                        </button>
-                    </form>
-                    <div>
-                        <button>CONNEXION</button>
-                    </div>
-                </div>
-            </section>
+        <!-- HEADER COMMUN : CONSERVÉ -->
+        <header class="site-header">
+            <div class="container site-header__inner">
+                <a class="brand" href="index.html">
+                    <span class="brand__logo" aria-hidden="true"><span></span><span></span><span></span></span>
+                    <span class="brand__name">PIXEL</span>
+                </a>
+
+                <input type="checkbox" id="nav-toggle" class="nav-toggle visually-hidden">
+                <label for="nav-toggle" class="nav-toggle__button" aria-label="Ouvrir le menu">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                </label>
+
+                <nav class="main-nav" aria-label="Navigation principale">
+                    <ul class="main-nav__list">
+                        <li><a class="main-nav__link" href="index.html" aria-current="page">Accueil</a></li>
+                        <li><a class="main-nav__link" href="catalogue.html">Catalogue</a></li>
+                        <li><a class="main-nav__link" href="genres.html">Genres</a></li>
+                        <li><a class="main-nav__link" href="about.html">Qui sommes-nous</a></li>
+                    </ul>
+                    <a class="button button--outline" type="button" id="open-login" >Connexion</a>
+                </nav>
+            </div>
         </header>
-        <!-- a la une -->
-        <section>
-            <div>
-                <h3>A LA UNE</h3>
-            </div>
-            <section>
-                <div>
-                    <img src="" alt="image du filme a la une">
-                </div>
-                <section>
-                    <div>
-                        <h3>genre annee auteur</h3>
-                        <h2>titre</h2>
-                    </div>
-                    <div>
-                        <h3>NOTRE NOTE</h3>
-                        <!-- note -->
-                    </div>
-                    <div>
-                        <h3>NOTE DU PUBLIC</h3>
-                        <!-- note public -->
-                        <p>7/10</p>
-                        <p>description</p>
-                    </div>
-                    <div>
-                        <button>LIRE LA CRITIQUE</button>
-                        <h3></h3>
-                    </div>
-                </section>
-                <div>
-                    <button>fleche</button>
-                    <button>fleche droite</button>
-                </div>
-            </section>
-        </section>
-            <!-- section avec les films les lieux notés -->
-        <section>
-            <div>
-                <h2>LES MIEUX NOTÉS</h2>
-                <!-- liens vers catalogues avec filtre mieux notés -->
-                <a href="catalogue.html"><p>Voir tout le catalogue</p></a> 
-            </div>
-            <div>
-                <img src="" alt="image film top mieux notés">
-                <h2>title</h2>
-                <p>annee genre PEGI</p>
-                <!-- note -->
-            </div>
-            <div>
-                <img src="" alt="image film deuxieme top notés">
-                <h2>title</h2>
-                <p>annee genre PEGI</p>
-                <!-- note -->
-            </div>
-            <div>
-                <img src="" alt="image film troisieme top notés">
-                <h2>title</h2>
-                <p>annee genre PEGI</p>
-                <!-- note -->
-            </div>
-            <div>
-                <img src="" alt="image film quatrieme top notés">
-                <h2>title</h2>
-                <p>annee genre PEGI</p>
-                <!-- note -->
-            </div>
-            <div>
-                <img src="" alt="image film cinquieme top notés">
-                <h2>title</h2>
-                <p>annee genre PEGI</p>
-                <!-- note -->
-            </div>
-        </section>
 
-            <!-- DERNIERES CRITIQUES -->
-            <section>
-                <div>
-                    <h2>DERNIERES CRITIQUES</h2>
-                    <!-- liens vers catalogues avec filtre dernieres critiques -->
-                    <a href="catalogue.html"><p>Toutes les critiques</p></a>
+        <main class="home">
+
+            <!-- FILM À LA UNE -->
+            <section class="featured container" aria-labelledby="featured-title">
+                <div class="section-heading">
+                    <h2 class="section-title" id="featured-title"><span class="section-title__marker" aria-hidden="true"></span> À LA UNE</h2>
+                    <span class="featured__eyebrow">SÉLECTION PIXEL</span>
                 </div>
-                <section>
-                    <div>
-                        <img src="" alt="image du dernier film critiquer">
-                        <p>genre</p>
-                        <h2>titre</h2>
-                        <p>extrait critique</p>
-                        <p>contributeur date publication</p>
+
+                <article class="featured__card">
+                    <div class="featured__poster">
+                        <img src="images/film-a-la-une.jpg" alt="Affiche du film à la une" width="600" height="800">
+                        <span class="featured__badge">LE CHOIX DE LA RÉDACTION</span>
                     </div>
-                    <div>
-                        <!-- note -->
+
+                    <div class="featured__content">
+                        <p class="featured__meta">SCIENCE-FICTION <span aria-hidden="true">/</span> 2026 <span aria-hidden="true">/</span> CINÉMA</p>
+                        <h1 class="featured__title">Le film à découvrir</h1>
+                        <p class="featured__description">Un film qui mérite votre attention. Découvrez notre analyse, notre avis et les raisons qui font de cette œuvre une sélection incontournable.</p>
+
+                        <div class="featured__ratings">
+                            <div class="featured__rating">
+                                <h3 class="rating-label">NOTRE NOTE</h3>
+                                <div class="rating-line">
+                                    <span class="rating rating--large" style="--score: 9" role="img" aria-label="Note de 9 sur 10"></span>
+                                    <span class="rating__score">9/10</span>
+                                </div>
+                            </div>
+
+                            <div class="featured__rating">
+                                <h3 class="rating-label">NOTE DU PUBLIC</h3>
+                                <div class="rating-line">
+                                    <span class="rating" style="--score: 7" role="img" aria-label="Note du public de 7 sur 10"></span>
+                                    <span class="rating__score">7/10</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a class="button button--primary featured__button" href="catalogue.html">Lire la critique <span aria-hidden="true">↗</span></a>
                     </div>
-                </section>
-                <section>
-                    <div>
-                        <img src="" alt="image de l'avant dernier film critiquer">
-                        <p>genre</p>
-                        <h2>titre</h2>
-                        <p>extrait critique</p>
-                        <p>contributeur date publication</p>
+
+                    <div class="featured__controls" aria-label="Navigation des films à la une">
+                        <button class="featured__arrow" type="button" aria-label="Film précédent">←</button>
+                        <button class="featured__arrow" type="button" aria-label="Film suivant">→</button>
                     </div>
-                    <div>
-                        <!-- note -->
-                    </div>
-                </section>
-                <section>
-                    <div>
-                        <img src="" alt="image du troisieme dernier film critiquer">
-                        <p>genre</p>
-                        <h2>titre</h2>
-                        <p>extrait critique</p>
-                        <p>contributeur date publication</p>
-                    </div>
-                    <div>
-                        <!-- note -->
-                    </div>
-                </section>
+                </article>
             </section>
-            
+
+            <!-- LES MIEUX NOTÉS -->
+            <section class="top-films container" aria-labelledby="top-films-title">
+                <div class="section-heading">
+                    <div>
+                        <h2 class="section-title" id="top-films-title"><span class="section-title__marker" aria-hidden="true"></span> LES MIEUX NOTÉS</h2>
+                        <p class="section-subtitle">Les films qui ont marqué notre rédaction.</p>
+                    </div>
+                    <a class="section-link" href="catalogue.html?tri=note">Voir tout le catalogue <span aria-hidden="true">↗</span></a>
+                </div>
+
+                <div class="film-grid">
+                    <article class="film-card">
+                        <a class="film-card__poster-link" href="catalogue.html" aria-label="Découvrir le film numéro un">
+                            <img class="film-card__poster" src="images/film-1.jpg" alt="Affiche du premier film" width="400" height="600" loading="lazy">
+                        </a>
+                        <div class="film-card__content">
+                            <p class="film-card__meta">2025 <span>•</span> SCIENCE-FICTION</p>
+                            <h3 class="film-card__title"><a href="catalogue.html">Premier film</a></h3>
+                            <div class="film-card__rating"><span class="rating" style="--score: 9" role="img" aria-label="Note de 9 sur 10"></span><span class="rating__score">9/10</span></div>
+                        </div>
+                    </article>
+
+                    <article class="film-card">
+                        <a class="film-card__poster-link" href="catalogue.html" aria-label="Découvrir le deuxième film">
+                            <img class="film-card__poster" src="images/film-2.jpg" alt="Affiche du deuxième film" width="400" height="600" loading="lazy">
+                        </a>
+                        <div class="film-card__content">
+                            <p class="film-card__meta">2024 <span>•</span> DRAME</p>
+                            <h3 class="film-card__title"><a href="catalogue.html">Deuxième film</a></h3>
+                            <div class="film-card__rating"><span class="rating" style="--score: 8" role="img" aria-label="Note de 8 sur 10"></span><span class="rating__score">8/10</span></div>
+                        </div>
+                    </article>
+
+                    <article class="film-card">
+                        <a class="film-card__poster-link" href="catalogue.html" aria-label="Découvrir le troisième film">
+                            <img class="film-card__poster" src="images/film-3.jpg" alt="Affiche du troisième film" width="400" height="600" loading="lazy">
+                        </a>
+                        <div class="film-card__content">
+                            <p class="film-card__meta">2025 <span>•</span> THRILLER</p>
+                            <h3 class="film-card__title"><a href="catalogue.html">Troisième film</a></h3>
+                            <div class="film-card__rating"><span class="rating" style="--score: 8" role="img" aria-label="Note de 8 sur 10"></span><span class="rating__score">8/10</span></div>
+                        </div>
+                    </article>
+
+                    <article class="film-card">
+                        <a class="film-card__poster-link" href="catalogue.html" aria-label="Découvrir le quatrième film">
+                            <img class="film-card__poster" src="images/film-4.jpg" alt="Affiche du quatrième film" width="400" height="600" loading="lazy">
+                        </a>
+                        <div class="film-card__content">
+                            <p class="film-card__meta">2023 <span>•</span> ANIMATION</p>
+                            <h3 class="film-card__title"><a href="catalogue.html">Quatrième film</a></h3>
+                            <div class="film-card__rating"><span class="rating" style="--score: 8" role="img" aria-label="Note de 8 sur 10"></span><span class="rating__score">8/10</span></div>
+                        </div>
+                    </article>
+
+                    <article class="film-card">
+                        <a class="film-card__poster-link" href="catalogue.html" aria-label="Découvrir le cinquième film">
+                            <img class="film-card__poster" src="images/film-5.jpg" alt="Affiche du cinquième film" width="400" height="600" loading="lazy">
+                        </a>
+                        <div class="film-card__content">
+                            <p class="film-card__meta">2024 <span>•</span> ACTION</p>
+                            <h3 class="film-card__title"><a href="catalogue.html">Cinquième film</a></h3>
+                            <div class="film-card__rating"><span class="rating" style="--score: 7" role="img" aria-label="Note de 7 sur 10"></span><span class="rating__score">7/10</span></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- DERNIÈRES CRITIQUES -->
+            <section class="latest-reviews" aria-labelledby="latest-reviews-title">
+                <div class="container">
+                    <div class="section-heading">
+                        <div>
+                            <h2 class="section-title" id="latest-reviews-title"><span class="section-title__marker" aria-hidden="true"></span> DERNIÈRES CRITIQUES</h2>
+                            <p class="section-subtitle">Nos dernières analyses, sans filtre.</p>
+                        </div>
+                        <a class="section-link" href="catalogue.html?tri=recent">Toutes les critiques <span aria-hidden="true">↗</span></a>
+                    </div>
+
+                    <div class="review-list">
+                        <article class="review-card">
+                            <a class="review-card__poster-link" href="catalogue.html" aria-label="Lire la critique du premier film">
+                                <img class="review-card__poster" src="images/critique-1.jpg" alt="Affiche du film critiqué" width="200" height="300" loading="lazy">
+                            </a>
+                            <div class="review-card__content">
+                                <p class="review-card__genre">DRAME</p>
+                                <h3 class="review-card__title"><a href="catalogue.html">Une histoire inoubliable</a></h3>
+                                <p class="review-card__excerpt">Une réalisation maîtrisée, des personnages attachants et une mise en scène qui reste en mémoire bien après le générique.</p>
+                                <p class="review-card__byline">Par <span>La rédaction PIXEL</span> <span aria-hidden="true">•</span> 18 octobre 2026</p>
+                            </div>
+                            <div class="review-card__score">
+                                <span class="review-card__score-number">9<span>/10</span></span>
+                                <span class="review-card__score-label">NOTE PIXEL</span>
+                            </div>
+                        </article>
+
+                        <article class="review-card">
+                            <a class="review-card__poster-link" href="catalogue.html" aria-label="Lire la critique du deuxième film">
+                                <img class="review-card__poster" src="images/critique-2.jpg" alt="Affiche du deuxième film critiqué" width="200" height="300" loading="lazy">
+                            </a>
+                            <div class="review-card__content">
+                                <p class="review-card__genre">SCIENCE-FICTION</p>
+                                <h3 class="review-card__title"><a href="catalogue.html">Au-delà du réel</a></h3>
+                                <p class="review-card__excerpt">Un univers visuel ambitieux et des idées fascinantes, malgré un rythme parfois inégal.</p>
+                                <p class="review-card__byline">Par <span>La rédaction PIXEL</span> <span aria-hidden="true">•</span> 16 octobre 2026</p>
+                            </div>
+                            <div class="review-card__score">
+                                <span class="review-card__score-number">8<span>/10</span></span>
+                                <span class="review-card__score-label">NOTE PIXEL</span>
+                            </div>
+                        </article>
+
+                        <article class="review-card">
+                            <a class="review-card__poster-link" href="catalogue.html" aria-label="Lire la critique du troisième film">
+                                <img class="review-card__poster" src="images/critique-3.jpg" alt="Affiche du troisième film critiqué" width="200" height="300" loading="lazy">
+                            </a>
+                            <div class="review-card__content">
+                                <p class="review-card__genre">THRILLER</p>
+                                <h3 class="review-card__title"><a href="catalogue.html">Le dernier indice</a></h3>
+                                <p class="review-card__excerpt">Un suspense efficace qui multiplie les pistes et réserve quelques surprises jusqu'à la dernière scène.</p>
+                                <p class="review-card__byline">Par <span>La rédaction PIXEL</span> <span aria-hidden="true">•</span> 14 octobre 2026</p>
+                            </div>
+                            <div class="review-card__score">
+                                <span class="review-card__score-number">7<span>/10</span></span>
+                                <span class="review-card__score-label">NOTE PIXEL</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
             <!-- EXPLORER PAR GENRE -->
-             <section>
-                <div>
-                    <h2>EXPLORER PAR GENRE</h2>
+            <section class="genres container" aria-labelledby="genres-title">
+                <div class="section-heading">
+                    <div>
+                        <h2 class="section-title" id="genres-title"><span class="section-title__marker" aria-hidden="true"></span> EXPLORER PAR GENRE</h2>
+                        <p class="section-subtitle">Trouvez votre prochain film préféré.</p>
+                    </div>
+                    <a class="section-link" href="genres.html">Tous les genres <span aria-hidden="true">↗</span></a>
                 </div>
-                 <div>     
-                    <!-- lien vers la page du genre -->
-                     <button>Action</button>
-                     <button>Animation</button>
-                     <button>Comédie</button>
-                     <button>Documentaire</button>
-                     <button>Drame</button>
-                     <button>Horreur</button>
-                     <button>Romance</button>
-                     <button>Sience-fiction</button>
-                     <button>Thriller</button>
-                     <button>Western</button>
-                 </div>
-             </section>
 
-             <!-- inscription email -->
-             <section>
-                <div>
-                    <h2>UN PIXEL PAR SEMAINE</h2>
-                    <p></p>
-                </div>
-                <div>
-                    <input type="email" placeholder="votre@email">
-                    <button>
-                        <span>S'INSCRIRE</span>
-                    </button>
-                </div>
-             </section>
+                <nav class="genre-list" aria-label="Explorer les films par genre">
+                    <a class="genre-chip" href="genres.html?genre=action">Action <span aria-hidden="true">↗</span></a>
+                    <a class="genre-chip" href="genres.html?genre=animation">Animation <span aria-hidden="true">↗</span></a>
+                    <a class="genre-chip" href="genres.html?genre=comedie">Comédie <span aria-hidden="true">↗</span></a>
+                    <a class="genre-chip" href="genres.html?genre=documentaire">Documentaire <span aria-hidden="true">↗</span></a>
+                    <a class="genre-chip" href="genres.html?genre=drame">Drame <span aria-hidden="true">↗</span></a>
+                    <a class="genre-chip" href="genres.html?genre=horreur">Horreur <span aria-hidden="true">↗</span></a>
+                    <a class="genre-chip" href="genres.html?genre=romance">Romance <span aria-hidden="true">↗</span></a>
+                    <a class="genre-chip" href="genres.html?genre=science-fiction">Science-fiction <span aria-hidden="true">↗</span></a>
+                    <a class="genre-chip" href="genres.html?genre=thriller">Thriller <span aria-hidden="true">↗</span></a>
+                    <a class="genre-chip" href="genres.html?genre=western">Western <span aria-hidden="true">↗</span></a>
+                </nav>
+            </section>
 
-        <!-- footer -->
-        <footer>
-            <section>
-                <div>
-                    <img src="" alt="logo du site Pixel">
-                    <p>2026</p>
-                </div>
-                <div>
-                    <h2>Nom du blog</h2>
-                    <a href="contact.html">Contact</a>
-                    <a href="mentions_legales.html">Mentions Légales</a>
-                    <a href="confidentialite.html">Confidentialité</a>
-                    <a href="cookies.html">Cookies</a>
-                    <a href="">Instagram</a>
+            <!-- NEWSLETTER -->
+            <section class="newsletter" aria-labelledby="newsletter-title">
+                <div class="container newsletter__inner">
+                    <div class="newsletter__content">
+                        <p class="newsletter__eyebrow">LA NEWSLETTER PIXEL</p>
+                        <h2 class="newsletter__title" id="newsletter-title">UN PIXEL PAR SEMAINE</h2>
+                        <p class="newsletter__description">Une sélection de films, nos dernières critiques et des découvertes directement dans votre boîte mail.</p>
+                    </div>
+
+                    <form class="newsletter__form" action="#" method="post">
+                        <label class="visually-hidden" for="newsletter-email">Votre adresse e-mail</label>
+                        <input class="newsletter__input" type="email" id="newsletter-email" name="email" placeholder="votre@email.be" autocomplete="email" required>
+                        <button class="button button--primary newsletter__button" type="submit">S'inscrire <span aria-hidden="true">→</span></button>
+                        <p class="newsletter__note">Pas de spam. Désinscription à tout moment.</p>
+                    </form>
                 </div>
             </section>
+
+        </main>
+
+        <!-- FOOTER COMMUN : CONSERVÉ -->
+        <footer class="site-footer">
+            <div class="container site-footer__inner">
+                <p class="site-footer__copyright">
+                    <span class="brand__logo brand__logo--small" aria-hidden="true"><span></span><span></span><span></span></span>
+                    © 2026 PIXEL
+                </p>
+                <nav aria-label="Liens de bas de page">
+                    <ul class="site-footer__links">
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="legal.html">Mentions légales</a></li>
+                        <li><a href="privacy.html">Confidentialité</a></li>
+                        <li><a href="cookies.html">Cookies</a></li>
+                    </ul>
+                </nav>
+            </div>
         </footer>
+        <!-- ===== Popup de connexion PIXEL ===== -->
+            <div class="login-modal" id="login-modal" aria-hidden="true" inert>
+                <section class="login-window" role="dialog" aria-modal="true" aria-labelledby="login-title">
+                    <!-- Colonne gauche -->
+                    <div class="login-visual">
+
+                        <a class="login-brand" href="index.html">
+                            <span class="login-brand__logo" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                            <span>[ NOM DU BLOG ]</span>
+                        </a>
+
+                        <div class="pixel-art" id="pixel-art" aria-hidden="true"></div>
+
+                        <p class="login-tagline">
+                            BON RETOUR PARMI NOUS.<br>
+                            VOTRE PROCHAIN FILM VOUS<br>
+                            ATTEND.
+                        </p>
+
+                    </div>
+
+                    <!-- Colonne droite -->
+                    <div class="login-panel">
+
+                        <button class="login-modal__close" id="close-login" type="button" aria-label="Fermer la fenêtre de connexion" >&times;</button>
+
+                        <div class="login-panel__inner">
+
+                            <h2 id="login-title">CONNEXION</h2>
+
+                            <p class="login-subtitle">
+                                Connectez-vous pour commenter et noter les films.
+                            </p>
+
+                            <form action="#" method="post" id="login-form">
+
+                                <div class="login-form__group">
+                                    <label for="login-email">ADRESSE E-MAIL</label>
+                                    <input
+                                        type="email"
+                                        id="login-email"
+                                        name="email"
+                                        placeholder="votre@email.be"
+                                        autocomplete="email"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="login-form__group">
+                                    <div class="login-password__heading">
+                                        <label for="login-password">MOT DE PASSE</label>
+                                        <a href="forgot-password.html">
+                                            Mot de passe oublié ?
+                                        </a>
+                                    </div>
+
+                                    <input type="password" id="login-password" name="password" placeholder="••••••••" autocomplete="current-password" required >
+                                </div>
+
+                                <label class="login-remember">
+                                    <input
+                                        type="checkbox"
+                                        name="remember"
+                                    >
+                                    <span>Rester connecté</span>
+                                </label>
+
+                                <button
+                                    class="login-submit"
+                                    type="submit"
+                                >
+                                    SE CONNECTER
+                                </button>
+
+                            </form>
+
+                            <div class="login-divider">
+                                <span></span>
+                                <p>OU</p>
+                                <span></span>
+                            </div>
+
+                            <p class="login-register">
+                                Pas encore de compte ?
+                                <a href="register.html">Créer un compte</a>
+                            </p>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <script src="js/login.js"></script>
     </body>
 </html>
