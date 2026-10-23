@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Genres – PIXEL</title>
+  <meta name="description" content="Tous les genres et sous-genres de films critiqués sur PIXEL.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/genres.css">
+</head>
+<body>
+
+  <!-- ===== Site header (shared across pages) ===== -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__logo" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="brand__name">PIXEL</span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle visually-hidden">
+      <label for="nav-toggle" class="nav-toggle__button" aria-label="Ouvrir le menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </label>
+
+      <nav class="main-nav" aria-label="Navigation principale">
+        <ul class="main-nav__list">
+          <li><a class="main-nav__link" href="index.html">Accueil</a></li>
+          <li><a class="main-nav__link" href="catalogue.html">Catalogue</a></li>
+          <li><a class="main-nav__link" href="genres.html" aria-current="page">Genres</a></li>
+          <li><a class="main-nav__link" href="nous.html">Qui sommes-nous</a></li>
+        </ul>
+        <a class="button button--outline" href="login.html">Connexion</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Genres ===== -->
+  <main class="container genres-page">
+    <header class="page-header">
+      <h1 class="page-title">Genres</h1>
+      <p class="page-intro">Choisissez un genre, puis affinez par sous-genre pour trouver votre prochain film.</p>
+    </header>
+
+    <ul class="genre-grid">
+        <li>
+          <article class="genre-card genre-card--action" id="action">
+            <div class="genre-card__band" aria-hidden="true">
+              <span class="p1"></span><span class="p1"></span><span class="p1"></span><span class="p2"></span><span class="p1"></span><span class="p2"></span><span class="p2"></span><span class="p3"></span><span class="p4"></span><span class="p4"></span><span class="p5"></span><span class="p4"></span><span class="p5"></span><span class="p5"></span><span class="p4"></span><span class="p5"></span>
+              <span class="p1"></span><span class="p2"></span><span class="p1"></span><span class="p1"></span><span class="p2"></span><span class="p1"></span><span class="p1"></span><span class="p3"></span><span class="p3"></span><span class="p3"></span><span class="p5"></span><span class="p4"></span><span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p5"></span>
+              <span class="p2"></span><span class="p1"></span><span class="p1"></span><span class="p2"></span><span class="p1"></span><span class="p3"></span><span class="p3"></span><span class="p2"></span><span class="p4"></span><span class="p3"></span><span class="p4"></span><span class="p3"></span><span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p5"></span>
+              <span class="p2"></span><span class="p1"></span><span class="p1"></span><span class="p2"></span><span class="p3"></span><span class="p2"></span><span class="p3"></span><span class="p2"></span><span class="p2"></span><span class="p4"></span><span class="p4"></span><span class="p4"></span><span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p5"></span>
+            </div>
+            <div class="genre-card__body">
+              <div class="genre-card__header">
+                <h2 class="genre-card__name"><a href="catalogue.html?genre=action">Action</a></h2>
+                <p class="genre-card__count">[N] films</p>
+              </div>
+              <ul class="genre-card__tags" aria-label="Sous-genres Action">
+                <li><a class="chip" href="catalogue.html?genre=action&amp;subgenre=arts-martiaux">Arts martiaux</a></li>
+                <li><a class="chip" href="catalogue.html?genre=action&amp;subgenre=espionnage">Espionnage</a></li>
+                <li><a class="chip" href="catalogue.html?genre=action&amp;subgenre=film-de-casse">Film de casse</a></li>
+              </ul>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="genre-card genre-card--animation" id="animation">
+            <div class="genre-card__band" aria-hidden="true">
+              <span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p4"></span><span class="p5"></span><span class="p4"></span><span class="p4"></span><span class="p4"></span><span class="p4"></span><span class="p3"></span><span class="p3"></span><span class="p2"></span><span class="p1"></span><span class="p2"></span><span class="p1"></span><span class="p1"></span>
+              <span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p4"></span><span class="p4"></span><span class="p5"></span><span class="p2"></span><span class="p2"></span><span class="p2"></span><span class="p3"></span><span class="p3"></span><span class="p1"></span><span class="p1"></span><span class="p2"></span><span class="p1"></span>
+              <span class="p5"></span><span class="p5"></span><span class="p4"></span><span class="p5"></span><span class="p3"></span><span class="p3"></span><span class="p4"></span><span class="p4"></span><span class="p2"></span><span class="p3"></span><span class="p3"></span><span class="p3"></span><span class="p1"></span><span class="p1"></span><span class="p2"></span><span class="p2"></span>
+              <span class="p5"></span><span class="p5"></span><span class="p4"></span><span class="p4"></span><span class="p3"></span><span class="p5"></span><span class="p4"></span><span class="p3"></span><span class="p3"></span><span class="p2"></span><span class="p2"></span><span class="p2"></span><span class="p1"></span><span class="p1"></span><span class="p1"></span><span class="p1"></span>
+            </div>
+            <div class="genre-card__body">
+              <div class="genre-card__header">
+                <h2 class="genre-card__name"><a href="catalogue.html?genre=animation">Animation</a></h2>
+                <p class="genre-card__count">[N] films</p>
+              </div>
+              <ul class="genre-card__tags" aria-label="Sous-genres Animation">
+                <li><a class="chip" href="catalogue.html?genre=animation&amp;subgenre=anime">Anime</a></li>
+                <li><a class="chip" href="catalogue.html?genre=animation&amp;subgenre=stop-motion">Stop-motion</a></li>
+                <li><a class="chip" href="catalogue.html?genre=animation&amp;subgenre=image-de-synthese">Image de synthèse</a></li>
+              </ul>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="genre-card genre-card--comedie" id="comedie">
+            <div class="genre-card__band" aria-hidden="true">
+              <span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p4"></span><span class="p5"></span><span class="p4"></span><span class="p4"></span><span class="p3"></span><span class="p3"></span><span class="p2"></span><span class="p3"></span><span class="p3"></span><span class="p1"></span><span class="p2"></span><span class="p1"></span><span class="p1"></span>
+              <span class="p5"></span><span class="p5"></span><span class="p4"></span><span class="p5"></span><span class="p3"></span><span class="p5"></span><span class="p3"></span><span class="p4"></span><span class="p4"></span><span class="p2"></span><span class="p3"></span><span class="p2"></span><span class="p2"></span><span class="p2"></span><span class="p2"></span><span class="p1"></span>
+              <span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p4"></span><span class="p4"></span><span class="p5"></span><span class="p4"></span><span class="p4"></span><span class="p2"></span><span class="p3"></span><span class="p2"></span><span class="p3"></span><span class="p2"></span><span class="p2"></span><span class="p1"></span><span class="p1"></span>
+              <span class="p5"></span><span class="p5"></span><span class="p4"></span><span class="p4"></span><span class="p5"></span><span class="p3"></span><span class="p3"></span><span class="p2"></span><span class="p2"></span><span class="p4"></span><span class="p2"></span><span class="p2"></span><span class="p2"></span><span class="p2"></span><span class="p1"></span><span class="p2"></span>
+            </div>
+            <div class="genre-card__body">
+              <div class="genre-card__header">
+                <h2 class="genre-card__name"><a href="catalogue.html?genre=comedy">Comédie</a></h2>
+                <p class="genre-card__count">[N] films</p>
+              </div>
+              <ul class="genre-card__tags" aria-label="Sous-genres Comédie">
+                <li><a class="chip" href="catalogue.html?genre=comedy&amp;subgenre=comedie-romantique">Comédie romantique</a></li>
+                <li><a class="chip" href="catalogue.html?genre=comedy&amp;subgenre=satire">Satire</a></li>
+                <li><a class="chip" href="catalogue.html?genre=comedy&amp;subgenre=parodie">Parodie</a></li>
+              </ul>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="genre-card genre-card--documentaire" id="documentaire">
+            <div class="genre-card__band" aria-hidden="true">
+              <span class="p5"></span><span class="p4"></span><span class="p5"></span><span class="p4"></span><span class="p5"></span><span class="p3"></span><span class="p4"></span><span class="p2"></span><span class="p3"></span><span class="p2"></span><span class="p3"></span><span class="p2"></span><span class="p2"></span><span class="p2"></span><span class="p2"></span><span class="p1"></span>
+              <span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p4"></span><span class="p3"></span><span class="p4"></span><span class="p3"></span><span class="p3"></span><span class="p3"></span><span class="p2"></span><span class="p3"></span><span class="p2"></span><span class="p1"></span><span class="p1"></span>
+              <span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p4"></span><span class="p4"></span><span class="p3"></span><span class="p2"></span><span class="p2"></span><span class="p3"></span><span class="p3"></span><span class="p3"></span><span class="p2"></span><span class="p2"></span><span class="p1"></span><span class="p2"></span>
+              <span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p3"></span><span class="p4"></span><span class="p4"></span><span class="p3"></span><span class="p3"></span><span class="p2"></span><span class="p2"></span><span class="p3"></span><span class="p2"></span><span class="p1"></span><span class="p1"></span>
+            </div>
+            <div class="genre-card__body">
+              <div class="genre-card__header">
+                <h2 class="genre-card__name"><a href="catalogue.html?genre=documentary">Documentaire</a></h2>
+                <p class="genre-card__count">[N] films</p>
+              </div>
+              <ul class="genre-card__tags" aria-label="Sous-genres Documentaire">
+                <li><a class="chip" href="catalogue.html?genre=documentary&amp;subgenre=nature">Nature</a></li>
+                <li><a class="chip" href="catalogue.html?genre=documentary&amp;subgenre=musique">Musique</a></li>
+                <li><a class="chip" href="catalogue.html?genre=documentary&amp;subgenre=societe">Société</a></li>
+              </ul>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="genre-card genre-card--drame" id="drame">
+            <div class="genre-card__band" aria-hidden="true">
+              <span class="p5"></span><span class="p4"></span><span class="p5"></span><span class="p5"></span><span class="p3"></span><span class="p5"></span><span class="p3"></span><span class="p4"></span><span class="p2"></span><span class="p3"></span><span class="p3"></span><span class="p2"></span><span class="p2"></span><span class="p2"></span><span class="p1"></span><span class="p1"></span>
+              <span class="p5"></span><span class="p4"></span><span class="p5"></span><span class="p5"></span><span class="p4"></span><span class="p3"></span><span class="p3"></span><span class="p4"></span><span class="p3"></span><span class="p3"></span><span class="p3"></span><span class="p3"></span><span class="p1"></span><span class="p2"></span><span class="p1"></span><span class="p1"></span>
+              <span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p4"></span><span class="p4"></span><span class="p4"></span><span class="p4"></span><span class="p3"></span><span class="p2"></span><span class="p3"></span><span class="p2"></span><span class="p3"></span><span class="p2"></span><span class="p1"></span><span class="p1"></span><span class="p1"></span>
+              <span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p4"></span><span class="p3"></span><span class="p3"></span><span class="p2"></span><span class="p3"></span><span class="p2"></span><span class="p2"></span><span class="p1"></span><span class="p2"></span><span class="p2"></span><span class="p1"></span>
+            </div>
+            <div class="genre-card__body">
+              <div class="genre-card__header">
+                <h2 class="genre-card__name"><a href="catalogue.html?genre=drama">Drame</a></h2>
+                <p class="genre-card__count">[N] films</p>
+              </div>
+              <ul class="genre-card__tags" aria-label="Sous-genres Drame">
+                <li><a class="chip" href="catalogue.html?genre=drama&amp;subgenre=biopic">Biopic</a></li>
+                <li><a class="chip" href="catalogue.html?genre=drama&amp;subgenre=drame-historique">Drame historique</a></li>
+                <li><a class="chip" href="catalogue.html?genre=drama&amp;subgenre=film-de-proces">Film de procès</a></li>
+              </ul>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="genre-card genre-card--horreur" id="horreur">
+            <div class="genre-card__band" aria-hidden="true">
+              <span class="p1"></span><span class="p1"></span><span class="p2"></span><span class="p1"></span><span class="p3"></span><span class="p2"></span><span class="p3"></span><span class="p3"></span><span class="p2"></span><span class="p4"></span><span class="p3"></span><span class="p5"></span><span class="p4"></span><span class="p4"></span><span class="p5"></span><span class="p5"></span>
+              <span class="p1"></span><span class="p1"></span><span class="p2"></span><span class="p1"></span><span class="p2"></span><span class="p2"></span><span class="p3"></span><span class="p3"></span><span class="p4"></span><span class="p3"></span><span class="p3"></span><span class="p5"></span><span class="p5"></span><span class="p4"></span><span class="p5"></span><span class="p5"></span>
+              <span class="p1"></span><span class="p1"></span><span class="p2"></span><span class="p1"></span><span class="p2"></span><span class="p3"></span><span class="p2"></span><span class="p3"></span><span class="p4"></span><span class="p3"></span><span class="p3"></span><span class="p4"></span><span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p4"></span>
+              <span class="p1"></span><span class="p1"></span><span class="p1"></span><span class="p2"></span><span class="p1"></span><span class="p2"></span><span class="p3"></span><span class="p2"></span><span class="p3"></span><span class="p4"></span><span class="p4"></span><span class="p4"></span><span class="p4"></span><span class="p5"></span><span class="p5"></span><span class="p5"></span>
+            </div>
+            <div class="genre-card__body">
+              <div class="genre-card__header">
+                <h2 class="genre-card__name"><a href="catalogue.html?genre=horror">Horreur</a></h2>
+                <p class="genre-card__count">[N] films</p>
+              </div>
+              <ul class="genre-card__tags" aria-label="Sous-genres Horreur">
+                <li><a class="chip" href="catalogue.html?genre=horror&amp;subgenre=slasher">Slasher</a></li>
+                <li><a class="chip" href="catalogue.html?genre=horror&amp;subgenre=fantastique">Fantastique</a></li>
+                <li><a class="chip" href="catalogue.html?genre=horror&amp;subgenre=found-footage">Found footage</a></li>
+              </ul>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="genre-card genre-card--science-fiction" id="science-fiction">
+            <div class="genre-card__band" aria-hidden="true">
+              <span class="p1"></span><span class="p1"></span><span class="p2"></span><span class="p1"></span><span class="p3"></span><span class="p2"></span><span class="p3"></span><span class="p2"></span><span class="p3"></span><span class="p3"></span><span class="p4"></span><span class="p3"></span><span class="p4"></span><span class="p5"></span><span class="p4"></span><span class="p5"></span>
+              <span class="p1"></span><span class="p1"></span><span class="p1"></span><span class="p1"></span><span class="p3"></span><span class="p3"></span><span class="p3"></span><span class="p3"></span><span class="p2"></span><span class="p4"></span><span class="p3"></span><span class="p4"></span><span class="p4"></span><span class="p5"></span><span class="p4"></span><span class="p5"></span>
+              <span class="p1"></span><span class="p1"></span><span class="p1"></span><span class="p2"></span><span class="p1"></span><span class="p3"></span><span class="p3"></span><span class="p3"></span><span class="p4"></span><span class="p4"></span><span class="p4"></span><span class="p4"></span><span class="p5"></span><span class="p4"></span><span class="p4"></span><span class="p5"></span>
+              <span class="p1"></span><span class="p1"></span><span class="p1"></span><span class="p2"></span><span class="p1"></span><span class="p1"></span><span class="p2"></span><span class="p3"></span><span class="p3"></span><span class="p2"></span><span class="p4"></span><span class="p4"></span><span class="p4"></span><span class="p5"></span><span class="p4"></span><span class="p5"></span>
+            </div>
+            <div class="genre-card__body">
+              <div class="genre-card__header">
+                <h2 class="genre-card__name"><a href="catalogue.html?genre=science-fiction">Science-fiction</a></h2>
+                <p class="genre-card__count">[N] films</p>
+              </div>
+              <ul class="genre-card__tags" aria-label="Sous-genres Science-fiction">
+                <li><a class="chip" href="catalogue.html?genre=science-fiction&amp;subgenre=cyberpunk">Cyberpunk</a></li>
+                <li><a class="chip" href="catalogue.html?genre=science-fiction&amp;subgenre=space-opera">Space opera</a></li>
+                <li><a class="chip" href="catalogue.html?genre=science-fiction&amp;subgenre=dystopia">Dystopie</a></li>
+              </ul>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="genre-card genre-card--thriller" id="thriller">
+            <div class="genre-card__band" aria-hidden="true">
+              <span class="p1"></span><span class="p1"></span><span class="p2"></span><span class="p1"></span><span class="p3"></span><span class="p3"></span><span class="p3"></span><span class="p3"></span><span class="p4"></span><span class="p3"></span><span class="p4"></span><span class="p4"></span><span class="p4"></span><span class="p5"></span><span class="p5"></span><span class="p4"></span>
+              <span class="p1"></span><span class="p1"></span><span class="p1"></span><span class="p1"></span><span class="p1"></span><span class="p2"></span><span class="p3"></span><span class="p3"></span><span class="p3"></span><span class="p4"></span><span class="p3"></span><span class="p3"></span><span class="p3"></span><span class="p5"></span><span class="p4"></span><span class="p5"></span>
+              <span class="p1"></span><span class="p1"></span><span class="p1"></span><span class="p1"></span><span class="p1"></span><span class="p1"></span><span class="p2"></span><span class="p2"></span><span class="p3"></span><span class="p4"></span><span class="p3"></span><span class="p4"></span><span class="p4"></span><span class="p4"></span><span class="p5"></span><span class="p4"></span>
+              <span class="p1"></span><span class="p2"></span><span class="p2"></span><span class="p1"></span><span class="p2"></span><span class="p1"></span><span class="p3"></span><span class="p3"></span><span class="p2"></span><span class="p3"></span><span class="p4"></span><span class="p4"></span><span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p4"></span>
+            </div>
+            <div class="genre-card__body">
+              <div class="genre-card__header">
+                <h2 class="genre-card__name"><a href="catalogue.html?genre=thriller">Thriller</a></h2>
+                <p class="genre-card__count">[N] films</p>
+              </div>
+              <ul class="genre-card__tags" aria-label="Sous-genres Thriller">
+                <li><a class="chip" href="catalogue.html?genre=thriller&amp;subgenre=psychologique">Psychologique</a></li>
+                <li><a class="chip" href="catalogue.html?genre=thriller&amp;subgenre=policier">Policier</a></li>
+                <li><a class="chip" href="catalogue.html?genre=thriller&amp;subgenre=neo-noir">Néo-noir</a></li>
+              </ul>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="genre-card genre-card--western" id="western">
+            <div class="genre-card__band" aria-hidden="true">
+              <span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p3"></span><span class="p3"></span><span class="p3"></span><span class="p3"></span><span class="p4"></span><span class="p2"></span><span class="p2"></span><span class="p1"></span><span class="p3"></span><span class="p1"></span><span class="p1"></span><span class="p1"></span>
+              <span class="p5"></span><span class="p5"></span><span class="p4"></span><span class="p5"></span><span class="p5"></span><span class="p3"></span><span class="p3"></span><span class="p2"></span><span class="p2"></span><span class="p3"></span><span class="p3"></span><span class="p1"></span><span class="p1"></span><span class="p1"></span><span class="p1"></span><span class="p1"></span>
+              <span class="p5"></span><span class="p5"></span><span class="p5"></span><span class="p4"></span><span class="p3"></span><span class="p4"></span><span class="p4"></span><span class="p4"></span><span class="p3"></span><span class="p2"></span><span class="p2"></span><span class="p2"></span><span class="p2"></span><span class="p1"></span><span class="p2"></span><span class="p1"></span>
+              <span class="p5"></span><span class="p4"></span><span class="p5"></span><span class="p5"></span><span class="p4"></span><span class="p3"></span><span class="p4"></span><span class="p4"></span><span class="p3"></span><span class="p3"></span><span class="p3"></span><span class="p2"></span><span class="p2"></span><span class="p1"></span><span class="p1"></span><span class="p1"></span>
+            </div>
+            <div class="genre-card__body">
+              <div class="genre-card__header">
+                <h2 class="genre-card__name"><a href="catalogue.html?genre=western">Western</a></h2>
+                <p class="genre-card__count">[N] films</p>
+              </div>
+              <ul class="genre-card__tags" aria-label="Sous-genres Western">
+                <li><a class="chip" href="catalogue.html?genre=western&amp;subgenre=western-spaghetti">Western spaghetti</a></li>
+                <li><a class="chip" href="catalogue.html?genre=western&amp;subgenre=neo-western">Néo-western</a></li>
+              </ul>
+            </div>
+          </article>
+        </li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="site-footer__copyright">
+        <span class="brand__logo brand__logo--small" aria-hidden="true"><span></span><span></span><span></span></span>
+        © 2026 PIXEL
+      </p>
+      <nav aria-label="Liens de bas de page">
+        <ul class="site-footer__links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="legal.html">Mentions légales</a></li>
+          <li><a href="privacy.html">Confidentialité</a></li>
+          <li><a href="cookies.html">Cookies</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
