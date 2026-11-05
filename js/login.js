@@ -3,8 +3,15 @@ const openButton = document.getElementById("open-login");
 const closeButton = document.getElementById("close-login");
 const modal = document.getElementById("login-modal");
 const emailInput = document.getElementById("login-email");
+// Other elements with data-open-login (e.g. "Connectez-vous" in comments) also open the popup
+const extraOpenButtons = document.querySelectorAll("[data-open-login]");
+let lastTrigger = openButton;
 
-function openModal() {
+function openModal(event) {
+    if (event && event.currentTarget) {
+        lastTrigger = event.currentTarget;
+    }
+
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
     modal.removeAttribute("inert");
@@ -19,11 +26,12 @@ function closeModal() {
     modal.setAttribute("inert", "");
     document.body.style.overflow = "";
 
-    openButton.focus();
+    lastTrigger.focus();
 }
 
 if (openButton && modal) {
     openButton.addEventListener("click", openModal);
+    extraOpenButtons.forEach((button) => button.addEventListener("click", openModal));
     closeButton.addEventListener("click", closeModal);
 
     modal.addEventListener("click", (event) => {

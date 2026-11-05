@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matrix (1999) – Critique – PIXEL</title>
+  <meta name="description" content="Matrix (1999) : fiche du film, notre critique, notre note et où le regarder en Belgique.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/film.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+  <!-- ===== Site header (shared across pages) ===== -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__logo" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="brand__name">PIXEL</span>
+      </a>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle visually-hidden">
+      <label for="nav-toggle" class="nav-toggle__button" aria-label="Ouvrir le menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </label>
+
+      <nav class="main-nav" aria-label="Navigation principale">
+        <ul class="main-nav__list">
+          <li><a class="main-nav__link" href="index.html">Accueil</a></li>
+          <li><a class="main-nav__link" href="catalogue.html">Catalogue</a></li>
+          <li><a class="main-nav__link" href="genres.html">Genres</a></li>
+          <li><a class="main-nav__link" href="nous.html">Qui sommes-nous</a></li>
+        </ul>
+        <a class="button button--outline" type="button" id="open-login">Connexion</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="film">
+
+    <!-- ===== Fil d'Ariane ===== -->
+    <nav class="container breadcrumb" aria-label="Fil d'Ariane">
+      <ol class="breadcrumb__list">
+        <li><a href="catalogue.html">Catalogue</a></li>
+        <li><a href="genres.html">Science-fiction</a></li>
+        <li aria-current="page">Matrix</li>
+      </ol>
+    </nav>
+
+    <!-- ===== Présentation du film ===== -->
+    <section class="container film-hero" aria-labelledby="film-title">
+      <figure class="film-hero__poster">
+        <img src="assets/posters/matrix.jpg" alt="Affiche du film Matrix" width="400" height="600">
+        <figcaption>[Affiche officielle du film]</figcaption>
+      </figure>
+
+      <div class="film-hero__info">
+        <ul class="film-tags" aria-label="Genres">
+          <li><a class="film-tag" href="genres.html">Science-fiction</a></li>
+          <li><a class="film-tag" href="genres.html">Cyberpunk</a></li>
+          <li><a class="film-tag" href="genres.html">Action</a></li>
+        </ul>
+
+        <h1 id="film-title" class="film-hero__title">Matrix</h1>
+        <p class="film-hero__meta">1999 · 2 h 16 · États-Unis · VO anglais · PEGI 16</p>
+
+        <div class="film-scores">
+          <div class="film-scores__item">
+            <p class="film-label">Notre note</p>
+            <div class="film-scores__value">
+              <span class="rating rating--large" style="--score: 9" role="img" aria-label="Notre note : 9 sur 10"></span>
+              <span class="film-scores__number film-scores__number--accent" aria-hidden="true">9/10</span>
+            </div>
+          </div>
+          <div class="film-scores__item">
+            <p class="film-label">Note du public</p>
+            <div class="film-scores__value">
+              <span class="film-scores__number">[X]/10</span>
+              <span class="film-scores__votes">[N] votes</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="film-synopsis">
+          <h2 class="film-eyebrow">Synopsis</h2>
+          <p>Thomas Anderson, programmeur le jour et pirate informatique la nuit, découvre que le monde qu'il croit réel est une simulation contrôlée par des machines. Sous le nom de Neo, il rejoint la résistance menée par Morpheus.</p>
+        </div>
+
+        <dl class="film-crew">
+          <div>
+            <dt class="film-label">Réalisation</dt>
+            <dd class="film-crew__director">Lana &amp; Lilly Wachowski</dd>
+          </div>
+          <div>
+            <dt class="film-label">Avec</dt>
+            <dd>Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving</dd>
+          </div>
+        </dl>
+
+        <div class="film-actions">
+          <a class="button button--primary film-actions__main" href="#critique">Lire notre critique</a>
+          <a class="button button--ghost film-actions__trailer" href="#bande-annonce">Bande-annonce</a>
+          <button class="button button--ghost" type="button" aria-pressed="false" id="add-to-list">+ Ma liste</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Où le regarder ===== -->
+    <section class="film-watch" aria-labelledby="watch-title">
+      <div class="container film-watch__inner">
+        <h2 id="watch-title" class="film-watch__title">Où le regarder en Belgique</h2>
+        <ul class="film-watch__list">
+          <li class="film-tag film-tag--plain">[Plateforme 1] · Abonnement</li>
+          <li class="film-tag film-tag--plain">[Plateforme 2] · Location</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Critique ===== -->
+    <div class="container film-review" id="critique">
+      <article class="review" aria-labelledby="review-title">
+        <div class="review-author">
+          <div class="review-author__avatar" aria-hidden="true">
+            <span class="px-d"></span><span class="px-d"></span><span class="px-g"></span><span class="px-m"></span>
+            <span class="px-d"></span><span class="px-d"></span><span class="px-g"></span><span class="px-r"></span>
+            <span class="px-d"></span><span class="px-d"></span><span class="px-m"></span><span class="px-b"></span>
+            <span class="px-b"></span><span class="px-g"></span><span class="px-d"></span><span class="px-m"></span>
+          </div>
+          <div>
+            <p class="review-author__name">[Nom du contributeur]</p>
+            <p class="review-author__meta"><time datetime="">[Date de publication]</time> · [X] min de lecture</p>
+          </div>
+        </div>
+
+        <h2 id="review-title" class="film-section-title film-section-title--large">Notre critique</h2>
+
+        <p class="review__lead">[Chapeau : une phrase forte qui résume l'avis du rédacteur.]</p>
+        <p>[Premier paragraphe de la critique. Contexte du film, attentes, première impression.]</p>
+        <p>[Deuxième paragraphe : mise en scène, photographie, montage, musique.]</p>
+
+        <blockquote class="review__quote">
+          <p>[Citation mise en avant, tirée de la critique.]</p>
+        </blockquote>
+
+        <p>[Troisième paragraphe : interprétation des acteurs, scénario.]</p>
+
+        <details class="spoiler">
+          <summary class="spoiler__summary">
+            <span class="spoiler__warning">Attention : spoilers</span>
+            <span class="button button--ghost spoiler__toggle">
+              <span class="spoiler__show">Afficher le passage</span>
+              <span class="spoiler__hide">Masquer le passage</span>
+            </span>
+          </summary>
+          <p class="spoiler__content">[Passage de la critique contenant des spoilers.]</p>
+        </details>
+
+        <p>[Conclusion de la critique.]</p>
+
+        <div class="review-points">
+          <section class="review-points__box" aria-labelledby="pros-title">
+            <h3 id="pros-title" class="review-points__title review-points__title--pros">+ On a aimé</h3>
+            <ul>
+              <li>[Point fort 1]</li>
+              <li>[Point fort 2]</li>
+              <li>[Point fort 3]</li>
+            </ul>
+          </section>
+          <section class="review-points__box" aria-labelledby="cons-title">
+            <h3 id="cons-title" class="review-points__title review-points__title--cons">− Moins convaincant</h3>
+            <ul>
+              <li>[Point faible 1]</li>
+              <li>[Point faible 2]</li>
+            </ul>
+          </section>
+        </div>
+
+        <section class="trailer" id="bande-annonce" aria-labelledby="trailer-title">
+          <h3 id="trailer-title" class="film-section-title">Bande-annonce</h3>
+          <div class="trailer__video">
+            <button class="trailer__play" type="button" aria-label="Lire la bande-annonce">
+              <img src="assets/icons/play.svg" alt="" width="28" height="28">
+            </button>
+            <p class="trailer__caption">[Vidéo intégrée]</p>
+          </div>
+        </section>
+      </article>
+
+      <aside class="review-aside" aria-label="Verdict et partage">
+        <div class="verdict">
+          <p class="film-label">Verdict</p>
+          <p class="verdict__score">9/10</p>
+          <span class="rating verdict__rating" style="--score: 9" role="img" aria-label="9 sur 10"></span>
+          <p class="verdict__text">[Verdict en une phrase.]</p>
+        </div>
+
+        <div class="share">
+          <p class="film-label">Partager</p>
+          <ul class="share__list">
+            <li><a class="film-tag film-tag--plain film-tag--large" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a class="film-tag film-tag--plain film-tag--large" href="https://www.facebook.com/sharer/sharer.php" target="_blank" rel="noopener" id="share-facebook">Facebook</a></li>
+            <li><button class="film-tag film-tag--plain film-tag--large" type="button" id="copy-link">Copier le lien</button></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <!-- ===== Films similaires ===== -->
+    <section class="container similar" aria-labelledby="similar-title">
+      <h2 id="similar-title" class="film-section-title film-section-title--medium">Films similaires</h2>
+      <ul class="similar__list">
+        <li>
+          <a class="similar-card" href="film.html">
+            <img class="similar-card__poster" src="assets/posters/blade-runner.jpg" alt="" width="400" height="600" loading="lazy">
+            <h3 class="similar-card__title">Blade Runner</h3>
+            <p class="similar-card__meta">1982 · 9/10</p>
+          </a>
+        </li>
+        <li>
+          <a class="similar-card" href="film.html">
+            <img class="similar-card__poster" src="assets/posters/ghost-in-the-shell.jpg" alt="" width="400" height="600" loading="lazy">
+            <h3 class="similar-card__title">Ghost in the Shell</h3>
+            <p class="similar-card__meta">1995 · 9/10</p>
+          </a>
+        </li>
+        <li>
+          <a class="similar-card" href="film.html">
+            <img class="similar-card__poster" src="assets/posters/dark-city.jpg" alt="" width="400" height="600" loading="lazy">
+            <h3 class="similar-card__title">Dark City</h3>
+            <p class="similar-card__meta">1998 · 8/10</p>
+          </a>
+        </li>
+        <li>
+          <a class="similar-card" href="film.html">
+            <img class="similar-card__poster" src="assets/posters/ex-machina.jpg" alt="" width="400" height="600" loading="lazy">
+            <h3 class="similar-card__title">Ex Machina</h3>
+            <p class="similar-card__meta">2014 · 8/10</p>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Commentaires ===== -->
+    <section class="container comments" aria-labelledby="comments-title">
+      <h2 id="comments-title" class="film-section-title film-section-title--medium">Commentaires <span class="comments__count">([N])</span></h2>
+
+      <form class="comments__form" action="#" method="post">
+        <label class="film-label" for="comment-text">Votre avis</label>
+        <textarea class="comments__textarea" id="comment-text" name="comment" rows="4" placeholder="Qu'avez-vous pensé du film ?"></textarea>
+        <div class="comments__form-footer">
+          <p class="comments__login"><button class="comments__login-link" type="button" data-open-login>Connectez-vous</button> pour publier un commentaire.</p>
+          <button class="button button--primary" type="submit">Publier</button>
+        </div>
+      </form>
+
+      <ul class="comments__list">
+        <li class="comment">
+          <p class="comment__header"><span class="comment__author">[Pseudo]</span> <span class="comment__date">[Il y a 2 jours]</span></p>
+          <p class="comment__text">[Texte du commentaire d'un lecteur.]</p>
+          <button class="link-button comment__reply" type="button">Répondre</button>
+        </li>
+        <li class="comment">
+          <p class="comment__header"><span class="comment__author">[Pseudo]</span> <span class="comment__date">[Il y a 5 jours]</span></p>
+          <p class="comment__text">[Texte du commentaire d'un lecteur.]</p>
+          <button class="link-button comment__reply" type="button">Répondre</button>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="site-footer__copyright">
+        <span class="brand__logo brand__logo--small" aria-hidden="true"><span></span><span></span><span></span></span>
+        © 2026 PIXEL
+      </p>
+      <nav aria-label="Liens de bas de page">
+        <ul class="site-footer__links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="legal.html">Mentions légales</a></li>
+          <li><a href="privacy.html">Confidentialité</a></li>
+          <li><a href="cookies.html">Cookies</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+        <!-- ===== Popup de connexion PIXEL ===== -->
+            <div class="login-modal" id="login-modal" aria-hidden="true" inert>
+                <section class="login-window" role="dialog" aria-modal="true" aria-labelledby="login-title">
+                    <!-- Colonne gauche -->
+                    <div class="login-visual">
+
+                        <a class="login-brand" href="index.html">
+                            <span class="login-brand__logo" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                            <span>[ NOM DU BLOG ]</span>
+                        </a>
+
+                        <div class="pixel-art" id="pixel-art" aria-hidden="true"></div>
+
+                        <p class="login-tagline">
+                            BON RETOUR PARMI NOUS.<br>
+                            VOTRE PROCHAIN FILM VOUS<br>
+                            ATTEND.
+                        </p>
+
+                    </div>
+
+                    <!-- Colonne droite -->
+                    <div class="login-panel">
+
+                        <button class="login-modal__close" id="close-login" type="button" aria-label="Fermer la fenêtre de connexion" >&times;</button>
+
+                        <div class="login-panel__inner">
+
+                            <h2 id="login-title">CONNEXION</h2>
+
+                            <p class="login-subtitle">
+                                Connectez-vous pour commenter et noter les films.
+                            </p>
+
+                            <form action="#" method="post" id="login-form">
+
+                                <div class="login-form__group">
+                                    <label for="login-email">ADRESSE E-MAIL</label>
+                                    <input
+                                        type="email"
+                                        id="login-email"
+                                        name="email"
+                                        placeholder="votre@email.be"
+                                        autocomplete="email"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="login-form__group">
+                                    <div class="login-password__heading">
+                                        <label for="login-password">MOT DE PASSE</label>
+                                        <a href="forgot-password.html">
+                                            Mot de passe oublié ?
+                                        </a>
+                                    </div>
+
+                                    <input type="password" id="login-password" name="password" placeholder="••••••••" autocomplete="current-password" required >
+                                </div>
+
+                                <label class="login-remember">
+                                    <input
+                                        type="checkbox"
+                                        name="remember"
+                                    >
+                                    <span>Rester connecté</span>
+                                </label>
+
+                                <button
+                                    class="login-submit"
+                                    type="submit"
+                                >
+                                    SE CONNECTER
+                                </button>
+
+                            </form>
+
+                            <div class="login-divider">
+                                <span></span>
+                                <p>OU</p>
+                                <span></span>
+                            </div>
+
+                            <p class="login-register">
+                                Pas encore de compte ?
+                                <a href="register.html">Créer un compte</a>
+                            </p>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <script src="js/login.js"></script>
+  <script src="js/film.js"></script>
+</body>
+</html>

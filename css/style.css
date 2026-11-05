@@ -300,6 +300,18 @@ a:hover {
   color: var(--color-accent);
 }
 
+/* Secondary button: subtle border, light text */
+.button--ghost {
+  border-color: var(--color-border-strong);
+  color: var(--color-text);
+}
+
+.button--ghost:hover {
+  border-color: var(--color-accent);
+  background: var(--color-tint);
+  color: var(--color-accent);
+}
+
 .button--block {
   width: 100%;
 }
