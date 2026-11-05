@@ -22,23 +22,25 @@ function closeModal() {
     openButton.focus();
 }
 
-openButton.addEventListener("click", openModal);
-closeButton.addEventListener("click", closeModal);
+if (openButton && modal) {
+    openButton.addEventListener("click", openModal);
+    closeButton.addEventListener("click", closeModal);
 
-modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
-        closeModal();
-    }
-});
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
 
-document.addEventListener("keydown", (event) => {
-    if (
-        event.key === "Escape" &&
-        modal.classList.contains("is-open")
-    ) {
-        closeModal();
-    }
-});
+    document.addEventListener("keydown", (event) => {
+        if (
+            event.key === "Escape" &&
+            modal.classList.contains("is-open")
+        ) {
+            closeModal();
+        }
+    });
+}
 
 
 
