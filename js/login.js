@@ -7,6 +7,16 @@ const emailInput = document.getElementById("login-email");
 const extraOpenButtons = document.querySelectorAll("[data-open-login]");
 let lastTrigger = openButton;
 
+// While the popup is open, the rest of the page is made inert
+// so keyboard focus and screen readers stay inside the popup
+function setPageInert(isInert) {
+    Array.from(document.body.children).forEach((element) => {
+        if (element !== modal && element.tagName !== "SCRIPT") {
+            element.inert = isInert;
+        }
+    });
+}
+
 function openModal(event) {
     if (event && event.currentTarget) {
         lastTrigger = event.currentTarget;
@@ -15,6 +25,7 @@ function openModal(event) {
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
     modal.removeAttribute("inert");
+    setPageInert(true);
     document.body.style.overflow = "hidden";
 
     emailInput.focus();
@@ -24,6 +35,7 @@ function closeModal() {
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");
     modal.setAttribute("inert", "");
+    setPageInert(false);
     document.body.style.overflow = "";
 
     lastTrigger.focus();

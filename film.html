@@ -16,6 +16,8 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
   <!-- ===== Site header (shared across pages) ===== -->
   <header class="site-header">
     <div class="container site-header__inner">
@@ -24,8 +26,8 @@
         <span class="brand__name">PIXEL</span>
       </a>
 
-      <input type="checkbox" id="nav-toggle" class="nav-toggle visually-hidden">
-      <label for="nav-toggle" class="nav-toggle__button" aria-label="Ouvrir le menu">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle visually-hidden" aria-label="Menu">
+      <label for="nav-toggle" class="nav-toggle__button">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </label>
 
@@ -36,12 +38,12 @@
           <li><a class="main-nav__link" href="genres.html">Genres</a></li>
           <li><a class="main-nav__link" href="nous.html">Qui sommes-nous</a></li>
         </ul>
-        <a class="button button--outline" type="button" id="open-login">Connexion</a>
+        <button class="button button--outline" type="button" id="open-login">Connexion</button>
       </nav>
     </div>
   </header>
 
-  <main class="film">
+  <main class="film" id="contenu" tabindex="-1">
 
     <!-- ===== Fil d'Ariane ===== -->
     <nav class="container breadcrumb" aria-label="Fil d'Ariane">
@@ -105,7 +107,7 @@
         <div class="film-actions">
           <a class="button button--primary film-actions__main" href="#critique">Lire notre critique</a>
           <a class="button button--ghost film-actions__trailer" href="#bande-annonce">Bande-annonce</a>
-          <button class="button button--ghost" type="button" aria-pressed="false" id="add-to-list">+ Ma liste</button>
+          <button class="button button--ghost" type="button" id="add-to-list">+ Ma liste</button>
         </div>
       </div>
     </section>
@@ -191,21 +193,22 @@
         </section>
       </article>
 
-      <aside class="review-aside" aria-label="Verdict et partage">
+      <aside class="review-aside" aria-labelledby="verdict-title">
         <div class="verdict">
-          <p class="film-label">Verdict</p>
+          <h2 class="film-label" id="verdict-title">Verdict</h2>
           <p class="verdict__score">[X]/10</p>
           <span class="rating verdict__rating" style="--score: 0" role="img" aria-label="[X] sur 10"></span>
           <p class="verdict__text">[Verdict en une phrase.]</p>
         </div>
 
         <div class="share">
-          <p class="film-label">Partager</p>
+          <h2 class="film-label">Partager</h2>
           <ul class="share__list">
-            <li><a class="film-tag film-tag--plain film-tag--large" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a class="film-tag film-tag--plain film-tag--large" href="https://www.facebook.com/sharer/sharer.php" target="_blank" rel="noopener" id="share-facebook">Facebook</a></li>
+            <li><a class="film-tag film-tag--plain film-tag--large" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram<span class="visually-hidden"> (nouvel onglet)</span></a></li>
+            <li><a class="film-tag film-tag--plain film-tag--large" href="https://www.facebook.com/sharer/sharer.php" target="_blank" rel="noopener" id="share-facebook">Facebook<span class="visually-hidden"> (nouvel onglet)</span></a></li>
             <li><button class="film-tag film-tag--plain film-tag--large" type="button" id="copy-link">Copier le lien</button></li>
           </ul>
+          <p class="visually-hidden" id="film-status" role="status"></p>
         </div>
       </aside>
     </div>

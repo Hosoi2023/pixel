@@ -6,10 +6,17 @@
 .film {
   --color-warning: #ffb86b;
   --color-negative: #ff8a8a;
+  --color-field-border: #4f7d5a;
+}
+
+/* <main> gets focus from the skip link; no outline needed there */
+.film:focus {
+  outline: none;
 }
 
 /* ---------- Small shared bits ---------- */
 .film-label {
+  font-weight: 400;
   color: var(--color-text-muted);
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -141,6 +148,7 @@ button.film-tag--plain:hover {
 }
 
 .film-hero__title {
+  overflow-wrap: anywhere; /* long titles wrap instead of overflowing */
   color: var(--color-text-strong);
   font-family: var(--font-display);
   font-weight: 400;
@@ -242,7 +250,7 @@ button.film-tag--plain:hover {
   padding: 14px 22px;
 }
 
-#add-to-list[aria-pressed="true"] {
+#add-to-list.is-added {
   border-color: var(--color-accent);
   color: var(--color-accent);
 }
@@ -603,7 +611,7 @@ button.film-tag--plain:hover {
   width: 100%;
   min-height: 120px;
   padding: 14px;
-  border: 1px solid var(--color-border-strong);
+  border: 1px solid var(--color-field-border); /* 3:1 contrast so the box is visible */
   border-radius: 0;
   background: var(--color-surface);
   color: var(--color-text);
@@ -677,7 +685,8 @@ button.film-tag--plain:hover {
 }
 
 .comment__reply {
-  padding: 0;
+  min-height: 24px; /* minimum touch target */
+  padding: 4px 0;
 }
 
 /* ---------- Responsive ---------- */

@@ -1,13 +1,25 @@
 // film.js — small interactions for film.html
 
+// Hidden live region: screen readers read out what we put in it
+const statusMessage = document.getElementById("film-status");
+
+function announce(message) {
+    if (statusMessage) {
+        statusMessage.textContent = message;
+    }
+}
+
 // "+ Ma liste" toggles on / off
 const listButton = document.getElementById("add-to-list");
 
 if (listButton) {
+    let added = false;
+
     listButton.addEventListener("click", () => {
-        const added = listButton.getAttribute("aria-pressed") === "true";
-        listButton.setAttribute("aria-pressed", String(!added));
-        listButton.textContent = added ? "+ Ma liste" : "✓ Dans ma liste";
+        added = !added;
+        listButton.classList.toggle("is-added", added);
+        listButton.textContent = added ? "✓ Dans ma liste" : "+ Ma liste";
+        announce(added ? "Film ajouté à votre liste." : "Film retiré de votre liste.");
     });
 }
 
@@ -26,8 +38,10 @@ if (copyButton && navigator.clipboard) {
         try {
             await navigator.clipboard.writeText(window.location.href);
             copyButton.textContent = "Lien copié !";
+            announce("Lien copié dans le presse-papiers.");
         } catch {
             copyButton.textContent = "Copie impossible";
+            announce("Le lien n'a pas pu être copié.");
         }
 
         setTimeout(() => {
